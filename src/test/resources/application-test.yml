@@ -1,0 +1,39 @@
+server:
+#   Embedded application server TEST configurations
+    port: 8080
+
+spring:
+    application:
+        name: 'geo-notes-authentication-service-test'
+
+    #   Application TEST configuration
+    main:
+        web-application-type: servlet
+
+#   Application data source TEST configuration
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        dbcp2:
+            test-on-borrow: true
+            test-while-idle: true
+            time-between-eviction-runs-millis: 60000
+            min-evictable-idle-time-millis: 30000
+            validation-query: SELECT 1
+            max-idle: 10
+            max-wait-millis: 8000
+            url: "jdbc:postgresql://localhost:5432/test"
+            username: "test"
+            password: "test"
+
+#   Flyway migrations TEST configuration
+    flyway:
+        enabled: true
+        encoding: UTF-8
+        url: "jdbc:postgresql://localhost:5432/test"
+        user: "test"
+        password: "test"
+
+eureka:
+#   Eureka client TEST configuration
+    client:
+        enabled: false

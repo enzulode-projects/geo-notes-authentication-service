@@ -1,0 +1,36 @@
+
+
+server:
+#   Embedded application server DEV configurations
+    port: 8080
+
+spring:
+    application:
+        name: 'geo-notes-authentication-service-dev'
+
+    #   Application DEV configuration
+    main:
+        web-application-type: servlet
+
+#   Application data source DEV configuration
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        dbcp2:
+            test-on-borrow: true
+            test-while-idle: true
+            time-between-eviction-runs-millis: 60000
+            min-evictable-idle-time-millis: 30000
+            validation-query: SELECT 1
+            max-idle: 10
+            max-wait-millis: 8000
+            url: 'jdbc:postgresql://localhost:5432/dev'
+            username: 'dev'
+            password: 'dev'
+
+#   Flyway migrations DEV configuration
+    flyway:
+        enabled: true
+        encoding: UTF-8
+        url: 'jdbc:postgresql://localhost:5432/dev'
+        user: 'dev'
+        password: 'dev'

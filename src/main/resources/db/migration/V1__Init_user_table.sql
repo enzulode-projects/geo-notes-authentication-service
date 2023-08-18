@@ -1,0 +1,6 @@
+CREATE TABLE _user (
+    id BIGSERIAL PRIMARY KEY,
+    nickname VARCHAR NOT NULL UNIQUE,
+    password VARCHAR NOT NULL,
+    creation_date TIMESTAMP NOT NULL
+);
