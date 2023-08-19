@@ -5,6 +5,6 @@ package com.enzulode.auth.model.dto;
  *
  * @param nickname user nickname
  */
-public record GenerateTokenDTO(String nickname)
+public record GenerateTokenDTO(String nickname, String password)
 {
 }
