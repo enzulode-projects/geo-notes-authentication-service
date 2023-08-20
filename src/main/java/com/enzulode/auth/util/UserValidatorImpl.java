@@ -23,10 +23,6 @@ public class UserValidatorImpl implements ModelValidator<User>
 		if (model == null)
 			return false;
 
-//		Validating user id
-		if (model.getId() == null || model.getId() < 1)
-			return false;
-
 //		Validating user nickname
 		if (model.getNickname() == null || model.getNickname().isBlank())
 			return false;
