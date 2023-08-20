@@ -35,6 +35,14 @@ public interface UserDAO
 	Optional<User> findById(long id);
 
 	/**
+	 * This method retrieves user from the database by nickname.
+	 *
+	 * @param nickname user nickname
+	 * @return an optional user instance
+	 */
+	Optional<User> findByNickname(String nickname);
+
+	/**
 	 * This method provides pagination on users.
 	 *
 	 * @param page pageable instance

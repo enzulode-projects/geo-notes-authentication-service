@@ -127,6 +127,34 @@ public class UserDAOImpl implements UserDAO
 	}
 
 	/**
+	 * This method retrieves user from the database by nickname.
+	 *
+	 * @param nickname user nickname
+	 * @return an optional user instance
+	 */
+	@Override
+	public Optional<User> findByNickname(String nickname)
+	{
+		if (nickname == null || nickname.isBlank())
+			return Optional.empty();
+
+		try
+		{
+			User user = jdbcTemplate.queryForObject(
+					"SELECT * FROM _user WHERE nickname = ? LIMIT 1",
+					userRowMapper,
+					nickname
+			);
+			return Optional.ofNullable(user);
+		}
+		catch (DataAccessException e)
+		{
+			log.error("Something went wrong during user fetch by nickname", e);
+			return Optional.empty();
+		}
+	}
+
+	/**
 	 * This method retrieves an amount of stored users.
 	 *
 	 * @return amount of stored users
