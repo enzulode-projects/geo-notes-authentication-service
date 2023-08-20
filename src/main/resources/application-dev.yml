@@ -15,6 +15,9 @@ spring:
 #   Application data source DEV configuration
     datasource:
         driver-class-name: org.postgresql.Driver
+        url: 'jdbc:postgresql://localhost:5432/dev'
+        username: 'dev'
+        password: 'dev'
         dbcp2:
             test-on-borrow: true
             test-while-idle: true
@@ -23,9 +26,6 @@ spring:
             validation-query: SELECT 1
             max-idle: 10
             max-wait-millis: 8000
-            url: 'jdbc:postgresql://localhost:5432/dev'
-            username: 'dev'
-            password: 'dev'
 
 #   Flyway migrations DEV configuration
     flyway:
@@ -34,3 +34,8 @@ spring:
         url: 'jdbc:postgresql://localhost:5432/dev'
         user: 'dev'
         password: 'dev'
+
+eureka:
+#   Eureka client DEV configuration
+    client:
+        enabled: false
