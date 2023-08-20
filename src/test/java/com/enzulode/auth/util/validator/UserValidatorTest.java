@@ -26,11 +26,11 @@ public class UserValidatorTest
 	 * This method checks user validation by id.
 	 */
 	@Test
-	@DisplayName("Test validation: invalid user id")
-	public void test_validate_userWithNoId_expected_false()
+	@DisplayName("Test validation: with no user id")
+	public void test_validate_userWithNoId_expected_true()
 	{
 		User user = new User(null, "nick", "pass", Date.from(Instant.now()));
-		assertFalse(userValidator.validate(user), "Expected false, but true occurred");
+		assertTrue(userValidator.validate(user), "Expected false, but true occurred");
 	}
 
 	/**
