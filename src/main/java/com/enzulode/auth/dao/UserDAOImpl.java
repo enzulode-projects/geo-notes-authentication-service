@@ -141,7 +141,7 @@ public class UserDAOImpl implements UserDAO
 		try
 		{
 			User user = jdbcTemplate.queryForObject(
-					"SELECT * FROM _user WHERE nickname = ?",
+					"SELECT * FROM _user WHERE nickname = ? LIMIT 1",
 					userRowMapper,
 					nickname
 			);
@@ -149,7 +149,7 @@ public class UserDAOImpl implements UserDAO
 		}
 		catch (DataAccessException e)
 		{
-			log.error("Something went wrong during user fetch by nickname");
+			log.error("Something went wrong during user fetch by nickname", e);
 			return Optional.empty();
 		}
 	}
