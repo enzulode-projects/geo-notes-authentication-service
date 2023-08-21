@@ -16,7 +16,7 @@ public class CreateUserDTOValidatorTest
 {
 
 	/**
-	 * Create user DTO validator instance
+	 * Create user DTO validator instance.
 	 */
 	private static final ModelValidator<CreateUserDTO> createUserDTOValidator = new CreateUserDTOValidatorImpl();
 
