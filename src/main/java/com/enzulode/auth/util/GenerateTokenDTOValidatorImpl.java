@@ -22,6 +22,9 @@ public class GenerateTokenDTOValidatorImpl implements ModelValidator<GenerateTok
 		if (model == null)
 			return false;
 
-		return model.nickname() != null && !model.nickname().isBlank();
+		if (model.nickname() == null || model.nickname().isBlank())
+			return false;
+
+		return model.password() != null && !model.password().isBlank();
 	}
 }
