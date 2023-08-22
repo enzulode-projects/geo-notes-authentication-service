@@ -30,6 +30,7 @@ public class JwtTokenHelperImpl implements TokenHelper
 	 * This method validates token.
 	 *
 	 * @param token token being validated
+	 * @throws SignatureException if token is expired
 	 */
 	@Override
 	public void verifyToken(String token) throws SignatureException
